@@ -1,0 +1,279 @@
+.btn {
+ background-color: rgba(16, 17, 18, 0.8);
+ border-radius: 5.6rem;
+ width: fit-content;
+ min-width: 26.5rem;
+ height: 6rem;
+ display: block;
+
+ .front {
+  @include flex(center, center);
+  background-color: $grey-dark-900;
+  border-radius: 5.6rem;
+  position: relative;
+  z-index: 2;
+  transition: all .3s ease;
+
+  width: fit-content;
+  min-width: 100%;
+  height: 100%;
+
+  color: $light;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+
+  .seta {
+   width: 24px;
+   height: 24px;
+   background: url(../../img/seta-default.svg) no-repeat;
+   background-size: cover;
+   transition: background .3s ease;
+   margin-left: 2.3rem;
+  }
+ }
+
+ &:hover {
+  .front {
+   transform: translate(4px, -7px);
+   background-color: #ffffff;
+   color: $grey-dark-900;
+   transition: all .3s ease;
+
+   .seta {
+    background: url(../../img/seta-hover.svg) no-repeat;
+   }
+  }
+ }
+}
+
+h2 {
+ font-size: 4rem;
+ line-height: 125%;
+ letter-spacing: -0.02em;
+
+ .anime {
+  display: inline-block;
+ }
+
+ @media(max-width:550px) {
+  font-size: 28px;
+ }
+}
+
+.title {
+ font-weight: 700;
+ font-size: 3.2rem;
+ line-height: 125%;
+ letter-spacing: -0.02em;
+ color: $grey-dark-900;
+ max-width: 200px;
+ display: block;
+ position: relative;
+
+ &::before,
+ &::after {
+  content: '';
+  position: absolute;
+  background-size: cover !important;
+ }
+
+ @media(max-width: 550px) {
+  font-size: 28px;
+ }
+}
+
+.calendario {
+ margin-top: 3.2rem;
+ @include flex(center, center);
+
+ span {
+  margin-left: 1.6rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+
+  strong {
+   font-size: 100%;
+   font-weight: 500;
+  }
+ }
+
+ @media(max-width:550px) {
+  span {
+   font-size: 16px;
+  }
+ }
+}
+
+.tag {
+ width: fit-content;
+ padding: 8px 14px 8px;
+ @include flex(center, center);
+ border-radius: 12.2rem;
+ font-weight: 700;
+ font-size: 14px;
+ line-height: 14px;
+ letter-spacing: -0.005em;
+ text-transform: uppercase;
+
+ box-shadow: 0px 10px 20px rgba(90, 93, 98, 0.1);
+ z-index: 2;
+ position: relative;
+
+ img {
+  margin-right: 1rem;
+ }
+
+ &.tag-key {
+  background-color: #E4EEFF;
+  color: $blue-dark;
+ }
+
+ &.tag-break {
+  background-color: #F3DBEF;
+  color: $wine-dark;
+ }
+
+ &.tag-hour {
+  background-color: #FFF5D6;
+  color: #DA9718;
+ }
+}
+
+.disabled {
+ pointer-events: none;
+ opacity: 0.4;
+}
+
+.btn-default {
+ padding: 0 2.4rem;
+ height: 4.6rem;
+ @include flex(center, center);
+ background-color: transparent;
+ border: 1px solid $grey-dark-900;
+ border-radius: 32px;
+ letter-spacing: -0.005em;
+ font-weight: 500;
+ color: $grey-dark-900;
+}
+
+@keyframes animeGrow {
+ from {
+  transform: scale(0.9);
+ }
+
+ to {
+  transform: scale(1.05);
+ }
+}
+
+@keyframes marquee {
+ 0% {
+  transform: translate(0, 0);
+ }
+
+ 100% {
+  transform: translate(-100%, 0);
+ }
+}
+
+@keyframes bounce {
+ 0% {
+  transform: translateY(0);
+ }
+
+ 50% {
+  transform: translateY(-40px) scale(1.05);
+
+ }
+
+ 100% {
+  transform: translateY(0) scale(1);
+ }
+}
+
+@keyframes shaking {
+ 0% {
+  transform: rotate(0deg);
+ }
+
+ 25% {
+  transform: rotate(5deg);
+ }
+
+ 50% {
+  transform: rotate(0eg);
+ }
+
+ 75% {
+  transform: rotate(-5deg);
+ }
+
+ 100% {
+  transform: rotate(0deg);
+ }
+}
+
+@keyframes leftAnime {
+ from {
+  transform: translateX(300px);
+ }
+
+ to {
+  transform: translateX(0);
+ }
+}
+
+@keyframes rightAnime {
+ from {
+  transform: translateX(-300px);
+ }
+
+ to {
+  transform: translateX(0);
+ }
+}
+
+@keyframes showIn {
+ from {
+  opacity: 0;
+  transform: translateX(-100px);
+
+ }
+
+ to {
+  opacity: 1;
+  transform: translateX(0px);
+ }
+}
+
+@keyframes animacaoImagens {
+ 0% {
+  background-image: url('../../img/animacao-1.png');
+ }
+
+ 50% {
+  background-image: url('../../img/animacao-2.png');
+ }
+
+ 70% {
+  background-image: url('../../img/animacao-3.png');
+ }
+
+ 100% {
+  background-image: url('../../img/animacao-4.png');
+ }
+}
+
+@keyframes showUp {
+ from {
+  opacity: 0;
+  transform: translateY(-40px);
+ }
+
+ to {
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
